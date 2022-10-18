@@ -1,0 +1,11 @@
+stories:
+- story: greet and ask about DS
+- steps:
+  - user: |
+      hey
+    intent: greet
+  - action: utter_greet
+  - user: |
+      what do you suggest me for data science as a carrer
+    intent: search_sites
+  - action: utter_search_sites

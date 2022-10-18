@@ -1,0 +1,40 @@
+version: '3.1'
+
+intents:
+- greet
+- search_sites
+- byee
+
+entities :
+- name
+
+slots:
+  name:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: custom
+  sites:
+    type: list
+    influence_conversation: false
+    mappings:
+    - type: custom
+
+responses:
+  utter_greet:
+    - text: "Hey! Wanna some help ?"
+    - text: "Hi! Hope you are doing good"
+  utter_byee:
+    - text: "Thanks for asking. Hope you visit again! Have a good day."
+    - text: "Thanks you. Byee for now :)"
+  utter_search_sites:
+    - text: "These are some exciting sites for Data Science and AI!"
+    - text: "You're all set! Check these sites to start your journey with Data Science."
+
+actions:
+- action_search_sites
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

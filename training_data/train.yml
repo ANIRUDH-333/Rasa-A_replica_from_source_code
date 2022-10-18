@@ -1,0 +1,35 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - Hey
+    - Hi
+    - hey there!
+
+- intent: search_sites
+  examples: |
+    - How can I start my carrer in Data Science
+    - Can you suggest me a roadmap to start carrer in Data Science
+  
+- intent: byee
+  examples: |
+    - Byee byee
+    - Thank you for the information.
+    - Thanks for the help.
+
+stories:
+- story: greet and search_sites and byee
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: search_sites
+  - action: utter_search_sites
+  - intent: byee
+  - action: utter_byee
+
+rules:
+- rule: Greet user
+  steps:
+  - intent: greet
+  - action: utter_greet
